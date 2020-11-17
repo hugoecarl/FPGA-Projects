@@ -1,4 +1,4 @@
-// (C) 2001-2020 Intel Corporation. All rights reserved.
+// (C) 2001-2018 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files from any of the foregoing (including device programming or simulation 
@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/20.1std/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
+// $Id: //acds/rel/18.1std/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2019/10/06 $
+// $Date: 2018/07/18 $
 // $Author: psgswbuild $
 
 // -------------------------------------------------------
@@ -136,14 +136,14 @@ module niosLab2_mm_interconnect_0_router
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h10000 - 64'h8000); 
     localparam PAD1 = log2ceil(64'h11000 - 64'h10800); 
-    localparam PAD2 = log2ceil(64'h11010 - 64'h11000); 
-    localparam PAD3 = log2ceil(64'h11018 - 64'h11010); 
+    localparam PAD2 = log2ceil(64'h11030 - 64'h11020); 
+    localparam PAD3 = log2ceil(64'h11038 - 64'h11030); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h11018;
+    localparam ADDR_RANGE = 64'h11038;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -203,14 +203,14 @@ module niosLab2_mm_interconnect_0_router
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
-    // ( 0x11000 .. 0x11010 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 17'h11000   ) begin
+    // ( 0x11020 .. 0x11030 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 17'h11020   ) begin
             src_channel = 4'b1000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
-    // ( 0x11010 .. 0x11018 )
-    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 17'h11010   ) begin
+    // ( 0x11030 .. 0x11038 )
+    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 17'h11030   ) begin
             src_channel = 4'b0001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end

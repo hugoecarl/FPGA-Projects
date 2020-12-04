@@ -2,6 +2,8 @@
 fpga_clk_50 => stepmotor:u1.clk
 stepmotor_en => stepmotor:u1.en
 stepmotor_dir => stepmotor:u1.dir
+but_top => stepmotor:u1.but
+but1_top => stepmotor:u1.but1
 stepmotor_vel[0] => stepmotor:u1.vel[0]
 stepmotor_vel[1] => stepmotor:u1.vel[1]
 stepmotor_pio[0] << stepmotor:u1.phases[0]
@@ -11,6 +13,7 @@ stepmotor_pio[3] << stepmotor:u1.phases[3]
 
 
 |toplevel|stepmotor:u1
+clk => topCounter1.CLK
 clk => enable.CLK
 clk => counter[0].CLK
 clk => counter[1].CLK
@@ -66,6 +69,7 @@ en => counter.OUTPUTSELECT
 en => counter.OUTPUTSELECT
 en => counter.OUTPUTSELECT
 en => enable.OUTPUTSELECT
+en => topCounter1.OUTPUTSELECT
 dir => Selector4.IN3
 dir => Selector5.IN3
 dir => Selector6.IN3
@@ -74,6 +78,34 @@ dir => Selector4.IN1
 dir => Selector5.IN1
 dir => Selector6.IN1
 dir => Selector7.IN1
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => counter.OUTPUTSELECT
+but => topCounter1.OUTPUTSELECT
+but1 => ~NO_FANOUT~
 vel[0] => Equal0.IN1
 vel[0] => Equal1.IN1
 vel[0] => Equal2.IN0

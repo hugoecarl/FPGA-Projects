@@ -32,6 +32,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "but_top",
+					"strict" : false
+				},
+				{
 					"name" : "stepmotor_vel[1]",
 					"strict" : false
 				},
